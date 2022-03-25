@@ -1,0 +1,51 @@
+<div class="cabecero">
+  <div class="presupuesto">
+    <div class="presupuesto_titulo">Presupuesto Disponible:</div>
+
+    <div class="presupuesto_valor">+ 2,345.64</div>
+
+    <div class="presupuesto_ingreso limpiarEstilos">
+      <div class="presupuesto_ingreso--texto">Ingresos</div>
+      <div class="right">
+        <div class="presupuesto_ingreso--valor">+ {{ingresosTotal}}</div>
+        <div class="presupuesto_ingreso--porcentaje">&nbsp;</div>
+      </div>
+    </div>
+
+    <div class="presupuesto_egreso limpiarEstilos">
+      <div class="presupuesto_egreso--text">Egresos</div>
+      <div class="right limpiarEstilos">
+        <div class="presupuesto_egreso--valor">- {{egresosTotal}}</div>
+        <div class="presupuesto_egreso--porcentaje">{{porcentaje}}%</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-formulario></app-formulario>
+
+<div class="contenedor limpiarEstilos">
+  <div class="ingreso">
+    <h2 class="ingreso_titulo">Ingresos</h2>
+
+    <app-ingresos
+      *ngFor="let item of ingresos"
+      [descripcion]="item[0]"
+      [valor]="item[1]"
+    >
+    </app-ingresos>
+  </div>
+
+  <div class="egreso">
+    <h2 class="egreso_titulo">Egresos</h2>
+
+    <app-egresos
+      *ngFor="let item of egresos"
+      [descripcion]="item[0]"
+      [valor]="item[1]"
+      [porcentaje]="item[2]"
+    >
+    </app-egresos>
+  </div>
+
+</div>

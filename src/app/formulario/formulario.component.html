@@ -1,0 +1,13 @@
+<form>
+    <div class="agregar">
+        <div class="agregar_contenedor">
+            <select class="agregar_tipo" name="tipo" [(ngModel)]="tipo">
+                <option value="ing" selected="selected">+</option>
+                <option value="egr">-</option>
+            </select>
+            <input type="text" class="agregar_descripcion" name="descripcion" placeholder="Agregar Descripción" [(ngModel)]="descripcion"/>
+            <input type="number" class="agregar_valor" name="valor" placeholder="Valor" [(ngModel)]="valor"/>
+            <button class="agregar_btn" name="bt-agregar" (click)="agregar()" ><i class="ion-ios-checkmark-outline"></i></button>
+        </div>
+    </div>
+  </form>
